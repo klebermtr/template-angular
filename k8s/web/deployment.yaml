@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: template-angular
+spec:  
+  replicas: 4
+  selector:
+    matchLabels:
+      app: template-angular
+  template:
+    metadata:
+      labels:
+        app: template-angular
+    spec: 
+      containers:
+        - name: template-angular
+          image: klebermtro/template-angular:v2
+          ports:
+            - containerPort: 80
